@@ -1,4 +1,5 @@
 <!-- Personal fork for learning Terraform provider development. Tracking upstream: citrix/terraform-provider-citrixadc -->
+<!-- Note to self: sync with upstream before starting any new feature work -->
 
 ## 2.1.4 (Mar 26, 2026)
 
@@ -51,5 +52,4 @@ BUG FIXES
 * **citrixadc_nsip**: Rectified readNsip logic to fix Import issue.
 * **citrixadc_systemfile**: Marked filecontent attribute as sensitive to keep sensitive data out of Terraform logs and plan/apply output. [#1256]
 * **resource_citrixadc_dnsnameserver.go**: Creating both UDP and TCP dnsnameservers when type is UDP_TCP. [#1221]
-* **citrixadc_sslvserver_sslcertkey_binding**: Rectifying Id calculation logic for sslvserver_sslcertkey_binding in migration usecase. [#1351]
-* **provider**: Adding back support for old ciph
+* **citrixadc_sslvserver_sslcertkey_binding**: Rectifying Id calcul
