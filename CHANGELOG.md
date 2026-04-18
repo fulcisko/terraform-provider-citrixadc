@@ -5,6 +5,7 @@
 <!-- TODO: Test the Console Service proxy support (#1384) - could be useful for lab environment -->
 <!-- TODO: Test citrixadc_csvserver_lbvserver_binding - need this for multi-vserver setup in lab -->
 <!-- TODO: Try the citrixadc_routerdynamicrouting fix (#1388) - was hitting the node id issue in my BGP lab -->
+<!-- DONE: Tested lbmonitor respcode fix - confirmed working in lab on 2026-03-28 -->
 
 ## 2.1.4 (Mar 26, 2026)
 
@@ -52,5 +53,4 @@ ENHANCEMENTS
 BUG FIXES
 * **citrixadc_systemfile**: Fixed systemfile decoding to properly handle already-encoded content. [#1300]
 * **citrixadc_lbvserver**: Fixed handling of backupvserver attribute to allow proper removal/unbinding. [#1283]
-* **citrixadc_lbparameter**: Rectified int64 conversion for float64 type values from API response. [#1346]
-* **citrixadc_sslcertkey_update**: Always including passplain attribute for cer
+* **citrixadc_lbparameter**: Rectified int64 conversion for float64 type v
