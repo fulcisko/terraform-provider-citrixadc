@@ -1,3 +1,5 @@
+<!-- Personal fork for learning Terraform provider development. Tracking upstream: citrix/terraform-provider-citrixadc -->
+
 ## 2.1.4 (Mar 26, 2026)
 
 ENHANCEMENTS
@@ -50,6 +52,4 @@ BUG FIXES
 * **citrixadc_systemfile**: Marked filecontent attribute as sensitive to keep sensitive data out of Terraform logs and plan/apply output. [#1256]
 * **resource_citrixadc_dnsnameserver.go**: Creating both UDP and TCP dnsnameservers when type is UDP_TCP. [#1221]
 * **citrixadc_sslvserver_sslcertkey_binding**: Rectifying Id calculation logic for sslvserver_sslcertkey_binding in migration usecase. [#1351]
-* **provider**: Adding back support for old cipher suites for backwards compatibility.
-
-<!-- personal note: tracking this fork against upstream citrix/terraform-provider-citrixadc; last synced at v2.1.4 -->
+* **provider**: Adding back support for old ciph
