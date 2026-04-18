@@ -2,6 +2,7 @@
 <!-- Note to self: sync with upstream before starting any new feature work -->
 <!-- Last synced with upstream: 2026-03-26 -->
 <!-- TODO: Look into the lbmonitor respcode drift fix (#1384) - had similar issue at work -->
+<!-- TODO: Test the Console Service proxy support (#1384) - could be useful for lab environment -->
 
 ## 2.1.4 (Mar 26, 2026)
 
@@ -52,5 +53,4 @@ BUG FIXES
 * **citrixadc_lbparameter**: Rectified int64 conversion for float64 type values from API response. [#1346]
 * **citrixadc_sslcertkey_update**: Always including passplain attribute for certificate updates. [#1353]
 * **citrixadc_nsip**: Rectified readNsip logic to fix Import issue.
-* **citrixadc_systemfile**: Marked filecontent attribute as sensitive to keep sensitive data out of Terraform logs and plan/apply output. [#1256]
-* **resource_citrixadc_dnsnameserver.go**: Creating bot
+* **citrixadc_systemfile**: Marked filecontent attribute as sensitive to keep sensitive data out of Terrafo
