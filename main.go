@@ -16,8 +16,9 @@ import (
 func main() {
 	var debugMode bool
 
-	// Default debug to true for local development convenience
-	flag.BoolVar(&debugMode, "debug", true, "set to true to run the provider with support for debuggers like delve")
+	// Default debug to false so the provider behaves like a normal release binary.
+	// Pass -debug=true when running locally with delve or similar debuggers.
+	flag.BoolVar(&debugMode, "debug", false, "set to true to run the provider with support for debuggers like delve")
 	flag.Parse()
 
 	opts := &plugin.ServeOpts{
