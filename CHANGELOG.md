@@ -9,6 +9,8 @@
 <!-- DONE: Tested lbmonitor respcode fix - confirmed working in lab on 2026-03-28 -->
 <!-- DONE: Tested csvserver_lbvserver_binding - works great for multi-vserver setup, confirmed 2026-03-30 -->
 <!-- DONE: Tested Console Service proxy support - works with my lab ADM instance, confirmed 2026-04-01 -->
+<!-- DONE: Tested routerdynamicrouting fix - BGP lab working without node id, confirmed 2026-04-05 -->
+<!-- NOTE: sslcertkey bundle drift fix (#1237) also resolved an issue I was seeing in my cert rotation scripts -->
 
 ## 2.1.4 (Mar 26, 2026)
 
@@ -48,10 +50,4 @@ ENHANCEMENTS
 
 [#1237]: https://github.com/citrix/terraform-provider-citrixadc/issues/1237
 [#1361]: https://github.com/citrix/terraform-provider-citrixadc/issues/1361
-[#1370]: https://github.com/citrix/terraform-provider-citrixadc/issues/1370
-
-
-## 2.1.1 (Feb 17, 2026)
-
-BUG FIXES
-* **citrixadc_systemfile**: Fixed systemfile decoding to properly handle already-encoded content
+[#1370]: https://g
