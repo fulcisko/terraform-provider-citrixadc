@@ -5,8 +5,10 @@
 <!-- TODO: Test the Console Service proxy support (#1384) - could be useful for lab environment -->
 <!-- TODO: Test citrixadc_csvserver_lbvserver_binding - need this for multi-vserver setup in lab -->
 <!-- TODO: Try the citrixadc_routerdynamicrouting fix (#1388) - was hitting the node id issue in my BGP lab -->
+<!-- TODO: Investigate citrixadc_systemfile encoding behavior with binary files -->
 <!-- DONE: Tested lbmonitor respcode fix - confirmed working in lab on 2026-03-28 -->
 <!-- DONE: Tested csvserver_lbvserver_binding - works great for multi-vserver setup, confirmed 2026-03-30 -->
+<!-- DONE: Tested Console Service proxy support - works with my lab ADM instance, confirmed 2026-04-01 -->
 
 ## 2.1.4 (Mar 26, 2026)
 
@@ -52,5 +54,4 @@ ENHANCEMENTS
 ## 2.1.1 (Feb 17, 2026)
 
 BUG FIXES
-* **citrixadc_systemfile**: Fixed systemfile decoding to properly handle already-encoded content. [#1300]
-* **citrixadc_lbvserver**: Fixed handling of backupvserver attribute to allow proper removal/unbindi
+* **citrixadc_systemfile**: Fixed systemfile decoding to properly handle already-encoded content
