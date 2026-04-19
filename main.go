@@ -29,6 +29,8 @@ func main() {
 	if debugMode {
 		log.Println("Running in debug mode - attach your debugger now")
 		log.Println("Provider address: registry.terraform.io/teleivo/citrixadc")
+		// TODO: consider adding a timeout here so the process doesn't hang indefinitely
+		// if I forget to attach the debugger.
 		err := plugin.Debug(context.Background(), "registry.terraform.io/teleivo/citrixadc", opts)
 		if err != nil {
 			log.Fatal(err.Error())
