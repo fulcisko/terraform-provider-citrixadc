@@ -18,6 +18,8 @@ func main() {
 
 	// Default debug to false so the provider behaves like a normal release binary.
 	// Pass -debug=true when running locally with delve or similar debuggers.
+	// Note: I often run with -debug=true during local development, so keeping this
+	// comment as a reminder to not commit debug=true accidentally.
 	flag.BoolVar(&debugMode, "debug", false, "set to true to run the provider with support for debuggers like delve")
 	flag.Parse()
 
@@ -26,6 +28,7 @@ func main() {
 	}
 
 	if debugMode {
+		log.Println("Running in debug mode - attach your debugger now")
 		err := plugin.Debug(context.Background(), "registry.terraform.io/teleivo/citrixadc", opts)
 		if err != nil {
 			log.Fatal(err.Error())
