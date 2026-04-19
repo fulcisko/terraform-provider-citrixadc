@@ -18,8 +18,6 @@ func main() {
 
 	// Default debug to false so the provider behaves like a normal release binary.
 	// Pass -debug=true when running locally with delve or similar debuggers.
-	// Note: I often run with -debug=true during local development, so keeping this
-	// comment as a reminder to not commit debug=true accidentally.
 	flag.BoolVar(&debugMode, "debug", false, "set to true to run the provider with support for debuggers like delve")
 	flag.Parse()
 
