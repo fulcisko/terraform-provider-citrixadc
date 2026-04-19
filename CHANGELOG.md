@@ -6,11 +6,13 @@
 <!-- TODO: Test citrixadc_csvserver_lbvserver_binding - need this for multi-vserver setup in lab -->
 <!-- TODO: Try the citrixadc_routerdynamicrouting fix (#1388) - was hitting the node id issue in my BGP lab -->
 <!-- TODO: Investigate citrixadc_systemfile encoding behavior with binary files -->
+<!-- TODO: Look into sslcertkey_update plugin framework migration - want to understand how SDKv2->plugin framework migration works -->
 <!-- DONE: Tested lbmonitor respcode fix - confirmed working in lab on 2026-03-28 -->
 <!-- DONE: Tested csvserver_lbvserver_binding - works great for multi-vserver setup, confirmed 2026-03-30 -->
 <!-- DONE: Tested Console Service proxy support - works with my lab ADM instance, confirmed 2026-04-01 -->
 <!-- DONE: Tested routerdynamicrouting fix - BGP lab working without node id, confirmed 2026-04-05 -->
 <!-- NOTE: sslcertkey bundle drift fix (#1237) also resolved an issue I was seeing in my cert rotation scripts -->
+<!-- NOTE: GoLang version entry in 2.1.2 appears to be cut off - upstream probably has the full version number, check on next sync -->
 
 ## 2.1.4 (Mar 26, 2026)
 
@@ -46,8 +48,4 @@ BUG FIXES
 
 ENHANCEMENTS
 * **provider**: Added support for proxying NetScaler APIs through Console Service.
-* **GoLang version**: Updated GoLang toolchain version to 1.24.13.
-
-[#1237]: https://github.com/citrix/terraform-provider-citrixadc/issues/1237
-[#1361]: https://github.com/citrix/terraform-provider-citrixadc/issues/1361
-[#1370]: https://g
+* **GoLang version**
