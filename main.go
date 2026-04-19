@@ -18,6 +18,7 @@ func main() {
 
 	// Default debug to false so the provider behaves like a normal release binary.
 	// Pass -debug=true when running locally with delve or similar debuggers.
+	// Note: I often run this with dlv using: dlv exec ./terraform-provider-citrixadc -- -debug=true
 	flag.BoolVar(&debugMode, "debug", false, "set to true to run the provider with support for debuggers like delve")
 	flag.Parse()
 
@@ -27,6 +28,7 @@ func main() {
 
 	if debugMode {
 		log.Println("Running in debug mode - attach your debugger now")
+		log.Println("Provider address: registry.terraform.io/teleivo/citrixadc")
 		err := plugin.Debug(context.Background(), "registry.terraform.io/teleivo/citrixadc", opts)
 		if err != nil {
 			log.Fatal(err.Error())
