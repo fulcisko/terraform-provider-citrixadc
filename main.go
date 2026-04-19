@@ -5,6 +5,7 @@ import (
 	"context"
 	"flag"
 	"log"
+	"time"
 
 	"github.com/hashicorp/terraform-plugin-sdk/v2/plugin"
 	"github.com/teleivo/terraform-provider-citrixadc/citrixadc"
@@ -15,11 +16,13 @@ import (
 
 func main() {
 	var debugMode bool
+	var debugTimeout time.Duration
 
 	// Default debug to false so the provider behaves like a normal release binary.
 	// Pass -debug=true when running locally with delve or similar debuggers.
 	// Note: I often run this with dlv using: dlv exec ./terraform-provider-citrixadc -- -debug=true
 	flag.BoolVar(&debugMode, "debug", false, "set to true to run the provider with support for debuggers like delve")
+	flag.DurationVar(&debugTimeout, "debug-timeout", 10*time.Minute, "how long to wait for a debugger to attach before exiting")
 	flag.Parse()
 
 	opts := &plugin.ServeOpts{
@@ -29,9 +32,10 @@ func main() {
 	if debugMode {
 		log.Println("Running in debug mode - attach your debugger now")
 		log.Println("Provider address: registry.terraform.io/teleivo/citrixadc")
-		// TODO: consider adding a timeout here so the process doesn't hang indefinitely
-		// if I forget to attach the debugger.
-		err := plugin.Debug(context.Background(), "registry.terraform.io/teleivo/citrixadc", opts)
+		log.Printf("Debug session will time out after %s", debugTimeout)
+		ctx, cancel := context.WithTimeout(context.Background(), debugTimeout)
+		defer cancel()
+		err := plugin.Debug(ctx, "registry.terraform.io/teleivo/citrixadc", opts)
 		if err != nil {
 			log.Fatal(err.Error())
 		}
