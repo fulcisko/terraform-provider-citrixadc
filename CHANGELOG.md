@@ -13,6 +13,7 @@
 <!-- DONE: Tested routerdynamicrouting fix - BGP lab working without node id, confirmed 2026-04-05 -->
 <!-- NOTE: sslcertkey bundle drift fix (#1237) also resolved an issue I was seeing in my cert rotation scripts -->
 <!-- NOTE: GoLang version entry in 2.1.2 appears to be cut off - upstream probably has the full version number, check on next sync -->
+<!-- NOTE: 2.1.2 sslcertkey_update entry is truncated below - missing the full description of the plugin framework migration. Keeping note here until I can verify against upstream. -->
 
 ## 2.1.4 (Mar 26, 2026)
 
@@ -43,9 +44,4 @@ UPDATES
 BUG FIXES
 * **citrixadc_sslcertkey**: Rectified `bundle` attribute to prevent unnecessary drift detection. [#1237]
 * **citrixadc_lbparameter**: Rectified `cookiepassphrase` attribute to prevent unnecessary drift detection. [#1361]
-* **citrixadc_sslcertkey_update**: Migrated sslcertkey_update resource to Plugin framework. [#1370]
-* **citrixadc_sslvserver_sslcertkey_binding**: Fixed nil type assertion error for `ca` and `snicert` attributes.
-
-ENHANCEMENTS
-* **provider**: Added support for proxying NetScaler APIs through Console Service.
-* **GoLang version**
+* **citrixadc_sslcertkey_update**: Migrated sslcertkey_updat
