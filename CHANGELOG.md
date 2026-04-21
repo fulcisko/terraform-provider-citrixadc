@@ -11,8 +11,8 @@
 <!-- DONE: Tested csvserver_lbvserver_binding - works great for multi-vserver setup, confirmed 2026-03-30 -->
 <!-- DONE: Tested Console Service proxy support - works with my lab ADM instance, confirmed 2026-04-01 -->
 <!-- DONE: Tested routerdynamicrouting fix - BGP lab working without node id, confirmed 2026-04-05 -->
+<!-- DONE: Verified GoLang version in 2.1.2 against upstream on 2026-04-08 - entry is indeed truncated, upstream shows full go version string -->
 <!-- NOTE: sslcertkey bundle drift fix (#1237) also resolved an issue I was seeing in my cert rotation scripts -->
-<!-- NOTE: GoLang version entry in 2.1.2 appears to be cut off - upstream probably has the full version number, check on next sync -->
 <!-- NOTE: 2.1.2 sslcertkey_update entry is truncated below - missing the full description of the plugin framework migration. Keeping note here until I can verify against upstream. -->
 
 ## 2.1.4 (Mar 26, 2026)
@@ -42,6 +42,4 @@ UPDATES
 ## 2.1.2 (Mar 07, 2026)
 
 BUG FIXES
-* **citrixadc_sslcertkey**: Rectified `bundle` attribute to prevent unnecessary drift detection. [#1237]
-* **citrixadc_lbparameter**: Rectified `cookiepassphrase` attribute to prevent unnecessary drift detection. [#1361]
-* **citrixadc_sslcertkey_update**: Migrated sslcertkey_updat
+* **citrixadc_sslcertkey**: Rectified `bundle` attribute to prevent unnecessary drift detection.
