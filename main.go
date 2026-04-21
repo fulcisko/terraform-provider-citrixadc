@@ -24,7 +24,8 @@ func main() {
 	flag.BoolVar(&debugMode, "debug", false, "set to true to run the provider with support for debuggers like delve")
 	// Increased default timeout from 10m to 30m since I frequently need more time to step through
 	// breakpoints when exploring unfamiliar parts of the codebase.
-	flag.DurationVar(&debugTimeout, "debug-timeout", 30*time.Minute, "how long to wait for a debugger to attach before exiting")
+	// Bumped further to 1h since 30m wasn't always enough during longer debugging sessions.
+	flag.DurationVar(&debugTimeout, "debug-timeout", 60*time.Minute, "how long to wait for a debugger to attach before exiting")
 	flag.Parse()
 
 	opts := &plugin.ServeOpts{
