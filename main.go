@@ -26,7 +26,8 @@ func main() {
 	// breakpoints when exploring unfamiliar parts of the codebase.
 	// Bumped further to 1h since 30m wasn't always enough during longer debugging sessions.
 	// Bumped to 2h after hitting the limit while tracing through the lbvserver resource logic.
-	flag.DurationVar(&debugTimeout, "debug-timeout", 120*time.Minute, "how long to wait for a debugger to attach before exiting")
+	// Bumped to 3h - 2h still isn't enough when I get interrupted mid-session.
+	flag.DurationVar(&debugTimeout, "debug-timeout", 180*time.Minute, "how long to wait for a debugger to attach before exiting")
 	flag.Parse()
 
 	opts := &plugin.ServeOpts{
