@@ -22,7 +22,9 @@ func main() {
 	// Pass -debug=true when running locally with delve or similar debuggers.
 	// Note: I often run this with dlv using: dlv exec ./terraform-provider-citrixadc -- -debug=true
 	flag.BoolVar(&debugMode, "debug", false, "set to true to run the provider with support for debuggers like delve")
-	flag.DurationVar(&debugTimeout, "debug-timeout", 10*time.Minute, "how long to wait for a debugger to attach before exiting")
+	// Increased default timeout from 10m to 30m since I frequently need more time to step through
+	// breakpoints when exploring unfamiliar parts of the codebase.
+	flag.DurationVar(&debugTimeout, "debug-timeout", 30*time.Minute, "how long to wait for a debugger to attach before exiting")
 	flag.Parse()
 
 	opts := &plugin.ServeOpts{
